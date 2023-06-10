@@ -7,10 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        clash: ['Clash Display', 'sans-serif'],
+      },
+      colors: {
+        blue500: '#599DA1',
+        bgColor: '#F4F8E8',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        golfBg: 'url("/golfBg.png")',
       },
     },
   },
