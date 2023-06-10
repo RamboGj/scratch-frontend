@@ -1,3 +1,5 @@
+'use client'
+
 import { CaretDown } from 'phosphor-react'
 
 export function FAQ() {
