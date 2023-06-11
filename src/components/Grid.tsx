@@ -1,7 +1,25 @@
+'use client'
+
 import { grids, logos } from '@/utils/images'
 import Image from 'next/image'
+import { AnimatedText } from './AnimatedText'
+import { motion } from 'framer-motion'
 
 export function Grid() {
+  const headerVariant = {
+    initial: {
+      opacity: 0,
+      y: -100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
   const gridItems = [
     {
       text: 'Streamlined Score Tracking',
@@ -29,10 +47,24 @@ export function Grid() {
     <section className="max-w-screen w-full bg-[#010E09] py-[307px] pb-[256px]">
       <div className="max-w-[1402px] w-full mx-auto px-10">
         <div className="w-full flex flex-col items-center">
-          <Image width={45} height={62} src={logos.logoSm} alt="Scratch Logo" />
-          <h1 className="font-medium text-white mt-5 leading-none text-[6rem] w-[600px] text-center">
-            One app for all needs
-          </h1>
+          <motion.div
+            variants={headerVariant}
+            whileInView="animate"
+            initial="initial"
+          >
+            <Image
+              width={45}
+              height={62}
+              src={logos.logoSm}
+              alt="Scratch Logo"
+            />
+          </motion.div>
+
+          <AnimatedText
+            className="font-clash font-medium text-[6rem] w-[600px] mt-5 text-white break-words flex flex-wrap justify-center gap-x-4 lg:gap-x-8 leading-none text-center"
+            text="One app for all needs"
+          />
+
           <div className="w-[1326px] mt-24 flex flex-col gap-10 flex-wrap">
             <div className="flex justify-between flex-wrap items-stretch">
               <div className="relative w-[780px]">

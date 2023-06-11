@@ -1,9 +1,32 @@
+'use client'
+
 import { logos } from '@/utils/images'
 import Image from 'next/image'
 
+import { motion } from 'framer-motion'
+
 export function Header() {
+  const headerVariant = {
+    initial: {
+      opacity: 0,
+      y: -100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
   return (
-    <header className="mx-auto pt-16">
+    <motion.header
+      variants={headerVariant}
+      initial="initial"
+      animate="animate"
+      className="mx-auto pt-16"
+    >
       <Image
         className="mx-auto"
         width={203}
@@ -11,6 +34,6 @@ export function Header() {
         src={logos.logo}
         alt="Scratch Logo"
       />
-    </header>
+    </motion.header>
   )
 }

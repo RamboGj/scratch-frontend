@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@14islands/r3f-scroll-rig": "^8.11.9",
     "@rocketseat/eslint-config": "^1.2.0",
     "@types/node": "20.2.5",
     "@types/react": "18.2.9",
@@ -16,6 +17,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
+    "framer-motion": "^10.12.16",
     "next": "13.4.4",
     "phosphor-react": "^1.4.1",
     "postcss": "8.4.24",

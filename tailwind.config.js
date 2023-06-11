@@ -11,6 +11,7 @@ module.exports = {
         clash: ['Clash Display', 'sans-serif'],
       },
       colors: {
+        blue600: '#3B8589',
         blue500: '#599DA1',
         bgColor: '#F4F8E8',
       },
