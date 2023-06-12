@@ -42,7 +42,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="max-w-screen w-full min-h-screen bg-bgColor">
+        {children}
+      </body>
     </html>
   )
 }

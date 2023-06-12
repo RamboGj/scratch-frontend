@@ -2,6 +2,7 @@ import mobileLg1 from '@/assets/iphones/mobileLg1.png'
 import mobileLg2 from '@/assets/iphones/mobileLg2.png'
 import mobileLg3 from '@/assets/iphones/mobileLg3.png'
 import mobileLg4 from '@/assets/iphones/mobileLg4.png'
+import group from '@/assets/iphones/group.png'
 import grid1 from '@/assets/grid/grid1.png'
 import grid2 from '@/assets/grid/grid2.png'
 import grid3 from '@/assets/grid/grid3.png'
@@ -22,6 +23,7 @@ export const iphones = {
   mobileLg2,
   mobileLg3,
   mobileLg4,
+  group,
 }
 
 export const grids = {

@@ -2,8 +2,8 @@
 
 import { grids, logos } from '@/utils/images'
 import Image from 'next/image'
-import { AnimatedText } from './AnimatedText'
 import { motion } from 'framer-motion'
+import { AnimatedText } from '../AnimatedText'
 
 export function Grid() {
   const headerVariant = {
@@ -44,8 +44,8 @@ export function Grid() {
   ]
 
   return (
-    <section className="max-w-screen w-full bg-[#010E09] py-[307px] pb-[256px]">
-      <div className="max-w-[1402px] w-full mx-auto px-10">
+    <section className="max-w-screen w-full pb-16 lg:pb-[256px] pt-20 lg:pt-[302px] bg-[#010E09] -mt-[600px] lg:-mt-[800px]">
+      <div className="max-w-[393px] lg:max-w-[1402px] px-3 lg:px-10 w-full mx-auto ">
         <div className="w-full flex flex-col items-center">
           <motion.div
             variants={headerVariant}
@@ -57,24 +57,25 @@ export function Grid() {
               height={62}
               src={logos.logoSm}
               alt="Scratch Logo"
+              className="w-5 h-7 lg:w-[45px] lg:h-[62px]"
             />
           </motion.div>
 
           <AnimatedText
-            className="font-clash font-medium text-[6rem] w-[600px] mt-5 text-white break-words flex flex-wrap justify-center gap-x-4 lg:gap-x-8 leading-none text-center"
-            text="One app for all needs"
+            className="font-clash font-medium text-[2.25rem] lg:text-[6rem] w-[250px] lg:w-[600px] mt-5 text-white break-words flex flex-wrap justify-center gap-x-2 lg:gap-x-8 leading-none text-center"
+            text="One App For All Needs"
           />
 
-          <div className="w-[1326px] mt-24 flex flex-col gap-10 flex-wrap">
+          <div className="w-[372px] lg:w-[1326px] mt-14 lg:mt-24 flex flex-col gap-10 flex-wrap">
             <div className="flex justify-between flex-wrap items-stretch">
-              <div className="relative w-[780px]">
+              <div className="relative w-[372px] lg:w-[780px]">
                 <Image
                   width={780}
                   height={400}
                   src={gridItems[0].image}
                   alt=""
                 />
-                <h2 className="font-medium absolute z-20 text-white text-[2.25rem] bottom-8 left-8">
+                <h2 className="font-medium absolute z-20 text-white text-[2rem] lg:text-[2.25rem] bottom-8 left-8 leading-none">
                   {gridItems[0].text}
                 </h2>
               </div>

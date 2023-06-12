@@ -11,9 +11,9 @@ export function Footer() {
   ]
 
   return (
-    <footer className="max-w-screen w-full bg-[#010E09] py-[115px] pl-[120px]">
-      <div className="w-[340px] flex flex-col items-start">
-        <h2 className="text-[3.125rem] text-white leading-none font-medium">
+    <footer className="max-w-screen w-full bg-[#010E09] py-14 lg:py-[115px] px-8 lg:pl-[120px]">
+      <div className="w-[300px] lg:w-[340px] flex flex-col items-start">
+        <h2 className="text-[2.25rem] lg:text-[3.125rem] text-white leading-none font-medium">
           Golf itch? <span className="text-blue500">Scratch</span> it.
         </h2>
         <div className="mt-12 flex items-stretch gap-5">
@@ -42,7 +42,7 @@ export function Footer() {
           <Link
             href="#"
             target="_blank"
-            className="flex mt-10 text-sm text-[#595959] font-medium"
+            className="flex mt-10 text-sm text-[#595959] font-medium p-2 lg:p-0"
           >
             Terms and Conditions
           </Link>

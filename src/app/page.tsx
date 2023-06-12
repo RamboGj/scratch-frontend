@@ -1,15 +1,14 @@
-import { Footer } from '@/components/Footer'
-import { FAQ } from '@/components/FAQ'
-import { DownloadCall } from '@/components/DownloadCall'
-import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
-import { Grid } from '@/components/Grid'
-
-import { Features } from '@/components/Features'
+import { Footer } from '@/components/Home/Footer'
+import { FAQ } from '@/components/Home/FAQ'
+import { DownloadCall } from '@/components/Home/DownloadCall'
+import { Header } from '@/components/Home/Header'
+import { Hero } from '@/components/Home/Hero'
+import { Grid } from '@/components/Home/Grid'
+import { Features } from '@/components/Home/Features'
 
 export default async function Home() {
   return (
-    <div className="max-w-screen w-full min-h-screen bg-bgColor font-clash">
+    <div className="w-full bg-bgColor font-clash">
       <Header />
       <Hero />
       <Grid />

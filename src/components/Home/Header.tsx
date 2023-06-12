@@ -28,7 +28,7 @@ export function Header() {
       className="mx-auto pt-16"
     >
       <Image
-        className="mx-auto"
+        className="mx-auto w-[120px] h-[36px] lg:w-[203px] lg:h-[52px]"
         width={203}
         height={52}
         src={logos.logo}
