@@ -47,7 +47,7 @@ export function Features() {
   return (
     <section
       ref={container}
-      className="max-w-[393px] lg:max-w-[1580px] px-5 lg:px-0 w-full mx-auto pt-16 lg:pt-[195px]"
+      className="max-w-[393px] lg:max-w-[1120px] 2xl:max-w-[1580px] px-5 lg:px-0 w-full mx-auto pt-16 lg:pt-[195px]"
     >
       <div className="w-full flex flex-col mx-auto">
         <AnimatedText
@@ -65,8 +65,8 @@ export function Features() {
               />
             </div>
             <div className="w-full flex flex-col gap-16 lg:gap-[242px] absolute z-20 top-6 lg:top-[265px]">
-              <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:justify-start gap-6 2xl:gap-[328px]">
-                <div className="w-full lg:w-[657px] flex flex-col items-end">
+              <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:justify-start gap-6 lg:gap-[328px]">
+                <div className="w-full lg:w-[484px] 2xl:w-[657px] flex flex-col items-end">
                   <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
                     <header>
                       <motion.span
@@ -76,14 +76,14 @@ export function Features() {
                           duration: 0.3,
                         }}
                         viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-xl text-blue500 tracking-[0.6rem] uppercase`}
+                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
                       >
                         Feature 1
                       </motion.span>
                     </header>
 
                     <AnimatedText
-                      className="-mt-5 lg:mt-0 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[4rem] leading-none font-medium text-left"
+                      className="-mt-5 lg:mt-0 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
                       text="Streamlined score tracking to keep you in the game."
                     />
 
@@ -94,7 +94,7 @@ export function Features() {
                         duration: 0.5,
                       }}
                       viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full lg:w-[582px] text-base lg:text-2xl text-blue500`}
+                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
                     >
                       We’ve improved score keeping because you shouldn’t spend
                       more time on your phone when out on the course.
@@ -117,8 +117,8 @@ export function Features() {
                   />
                 </motion.div>
               </div>
-              <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:justify-start gap-6 2xl:gap-[328px]">
-                <div className="w-full lg:w-[657px] flex flex-col items-end">
+              <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:justify-start gap-6 lg:gap-[328px]">
+                <div className="w-full lg:w-[484px] 2xl:w-[657px] flex flex-col items-end">
                   <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
                     <header>
                       <motion.span
@@ -128,13 +128,13 @@ export function Features() {
                           duration: 0.3,
                         }}
                         viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-xl text-blue500 tracking-[0.6rem] uppercase`}
+                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
                       >
                         Feature 2
                       </motion.span>
                     </header>
                     <AnimatedText
-                      className="-mt-5 lg:-mt-0 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[4rem] leading-none font-medium text-left"
+                      className="-mt-5 lg:-mt-0 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
                       text="Front-row seat to your friends’ games with live streaming."
                     />
 
@@ -145,7 +145,7 @@ export function Features() {
                         duration: 0.5,
                       }}
                       viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full lg:w-[582px] text-base lg:text-2xl text-blue500`}
+                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
                     >
                       Trash-talk beyond your foursome with live streaming right
                       in the app.
@@ -169,8 +169,8 @@ export function Features() {
                   />
                 </motion.div>
               </div>
-              <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:justify-start gap-6 2xl:gap-[328px]">
-                <div className="w-full lg:w-[657px] flex flex-col items-end">
+              <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:justify-start gap-6 lg:gap-[328px]">
+                <div className="w-full lg:w-[484px] 2xl:w-[657px] flex flex-col items-end">
                   <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
                     <header>
                       <motion.span
@@ -180,13 +180,13 @@ export function Features() {
                           duration: 0.3,
                         }}
                         viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-xl text-blue500 tracking-[0.6rem] uppercase`}
+                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
                       >
                         Feature 3
                       </motion.span>
                     </header>
                     <AnimatedText
-                      className="-mt-5 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[4rem] leading-none font-medium text-left"
+                      className="-mt-5 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
                       text="Host and join contests to win against your friends."
                     />
 
@@ -197,7 +197,7 @@ export function Features() {
                         duration: 0.5,
                       }}
                       viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full lg:w-[582px] text-base lg:text-2xl text-blue500`}
+                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
                     >
                       Play in contests with participation costs to spice things
                       up on the course.
@@ -221,8 +221,8 @@ export function Features() {
                 </motion.div>
               </div>
 
-              <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:justify-start gap-6 2xl:gap-[328px]">
-                <div className="w-full lg:w-[657px] flex flex-col items-end">
+              <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:justify-start gap-6 lg:gap-[328px]">
+                <div className="w-full lg:w-[482px] 2xl:w-[657px] flex flex-col items-end">
                   <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
                     <header>
                       <motion.span
@@ -232,14 +232,14 @@ export function Features() {
                           duration: 0.3,
                         }}
                         viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-xl text-blue500 tracking-[0.6rem] uppercase`}
+                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
                       >
                         Feature 4
                       </motion.span>
                     </header>
 
                     <AnimatedText
-                      className=" -mt-5 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[4rem] leading-none font-medium text-left"
+                      className=" -mt-5 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
                       text="Track your game with more features than you can imagine."
                     />
 
@@ -250,7 +250,7 @@ export function Features() {
                         duration: 0.5,
                       }}
                       viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full lg:w-[582px] text-base lg:text-2xl text-blue500`}
+                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
                     >
                       We’re talking live course updates, streamlined scorecards,
                       chatting, contests, livestreaming, and more.
