@@ -15,7 +15,7 @@ import { AnimatedText } from './AnimatedText'
 export function Features() {
   const container = useRef<HTMLDivElement>(null)
 
-  const { scrollYProgress, scrollY } = useScroll({ target: container })
+  const { scrollYProgress } = useScroll({ target: container })
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -25,30 +25,22 @@ export function Features() {
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     if (latest < 0.25) {
       scaleY.set(0.15)
-      scrollY.set(0.15)
-      // window.scrollTo({ top: 3600, behavior: 'auto' })
     }
 
     if (latest >= 0.25 && latest < 0.5) {
       scaleY.set(0.35)
-      scrollY.set(0.35)
-      // window.scrollTo({ top: 4600, behavior: 'auto' })
     }
 
     if (latest >= 0.5 && latest < 0.75) {
       scaleY.set(0.55)
-      scrollY.set(0.55)
-      // window.scrollTo({ top: 5500, behavior: 'auto' })
     }
 
     if (latest >= 0.75 && latest < 1) {
       scaleY.set(0.8)
-      // window.scrollTo({ top: 6500, behavior: 'auto' })
     }
 
     if (latest >= 1) {
       scaleY.set(1)
-      // window.scrollTo({ top: 7300, behavior: 'auto' })
     }
   })
 
@@ -67,11 +59,12 @@ export function Features() {
               <motion.div
                 style={{ scaleY }}
                 className="absolute h-[4200px] origin-top w-3 z-20 bg-gradient-to-t from-blue500 to-[#F4F8E8]"
-              ></motion.div>
-              <motion.div
-                animate={{ y: Number(scaleY) * 10 }}
-                className="rounded-full border-2 border-white w-12 h-12 z-30 bg-blue500 absolute -left-[18px] shadow-xl"
-              />
+              >
+                <motion.div
+                  style={{ y: scaleY }}
+                  className="rounded-full border-2 border-white w-12 h-12 z-30 bg-blue500 absolute top-0 -left-[18px] shadow-xl"
+                />
+              </motion.div>
             </div>
             <div className="w-full flex flex-col gap-[242px] absolute z-20 top-[265px]">
               <div className="w-full flex items-center justify-start gap-[328px]">
