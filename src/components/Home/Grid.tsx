@@ -62,7 +62,7 @@ export function Grid() {
           </motion.div>
 
           <AnimatedText
-            className="font-clash font-medium text-[2.25rem] lg:text-[4rem] 2xl:text-[6rem] w-[250px] lg:w-[600px] mt-5 text-white break-words flex flex-wrap justify-center gap-x-2 lg:gap-x-4 2xl:gap-x-8 leading-none text-center"
+            className="font-clash font-medium text-[2.25rem] lg:text-[4rem] 2xl:text-[6rem] w-[250px] lg:w-[600px] mt-5 text-white break-words flex flex-wrap justify-center gap-x-2 lg:gap-x-4 2xl:gap-x-6 leading-none text-center"
             text="One App For All Needs"
           />
 
