@@ -6,7 +6,7 @@ import {
   useScroll,
   motion,
   useSpring,
-  useMotionValueEvent,
+  // useMotionValueEvent,
 } from 'framer-motion'
 import Image from 'next/image'
 import { useRef } from 'react'
@@ -22,27 +22,58 @@ export function Features() {
     restDelta: 0.001,
   })
 
-  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    if (latest < 0.25) {
-      scaleY.set(0.15)
-    }
+  const features = [
+    {
+      number: 1,
+      title: 'Streamlined score tracking to keep you in the game.',
+      description:
+        'We’ve improved score keeping because you shouldn’t spend more time on your phone when out on the course.',
+      image: iphones.mobileLg1,
+    },
+    {
+      number: 2,
+      title: 'Front-row seat to your friends’ games with live streaming.',
+      description:
+        'Trash-talk beyond your foursome with live streaming right in the app.',
+      image: iphones.mobileLg2,
+    },
+    {
+      number: 3,
+      title: 'Host and join contests to win against your friends.',
+      description:
+        'Play in contests with participation costs to spice things up on the course.',
+      image: iphones.mobileLg3,
+    },
+    {
+      number: 4,
+      title: 'Track your game with more features than you can imagine.',
+      description:
+        'We’re talking live course updates, streamlined scorecards, chatting, contests, livestreaming, and more.',
+      image: iphones.mobileLg4,
+    },
+  ]
 
-    if (latest >= 0.25 && latest < 0.5) {
-      scaleY.set(0.35)
-    }
+  // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+  //   if (latest < 0.25) {
+  //     scaleY.set(0.15)
+  //   }
 
-    if (latest >= 0.5 && latest < 0.75) {
-      scaleY.set(0.55)
-    }
+  //   if (latest >= 0.25 && latest < 0.5) {
+  //     scaleY.set(0.35)
+  //   }
 
-    if (latest >= 0.75 && latest < 1) {
-      scaleY.set(0.8)
-    }
+  //   if (latest >= 0.5 && latest < 0.75) {
+  //     scaleY.set(0.55)
+  //   }
 
-    if (latest >= 1) {
-      scaleY.set(1)
-    }
-  })
+  //   if (latest >= 0.75 && latest < 1) {
+  //     scaleY.set(0.8)
+  //   }
+
+  //   if (latest >= 1) {
+  //     scaleY.set(1)
+  //   }
+  // })
 
   return (
     <section
@@ -65,214 +96,70 @@ export function Features() {
               />
             </div>
             <div className="w-full flex flex-col gap-16 lg:gap-[242px] absolute z-20 top-6 lg:top-[265px]">
-              <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:justify-start gap-6 lg:gap-[328px]">
-                <div className="w-full lg:w-[484px] 2xl:w-[657px] flex flex-col items-end">
-                  <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
-                    <header>
-                      <motion.span
-                        initial={{ opacity: 0, y: -200 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.3,
-                        }}
-                        viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
-                      >
-                        Feature 1
-                      </motion.span>
-                    </header>
+              {features.map((feature, index) => {
+                const alternate = index % 2 === 0
 
-                    <AnimatedText
-                      className="-mt-5 lg:mt-0 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
-                      text="Streamlined score tracking to keep you in the game."
-                    />
+                return (
+                  <div
+                    key={feature.number}
+                    className={`w-full flex ${
+                      alternate
+                        ? 'flex-col-reverse lg:flex-row'
+                        : 'flex-col-reverse lg:flex-row-reverse'
+                    }  items-center lg:justify-start gap-6 lg:gap-[328px]`}
+                  >
+                    <div className="w-full lg:w-[484px] 2xl:w-[657px] flex flex-col items-end">
+                      <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
+                        <header>
+                          <motion.span
+                            initial={{ opacity: 0, y: -200 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                              duration: 0.3,
+                            }}
+                            viewport={{ once: true, amount: 'all' }}
+                            className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
+                          >
+                            Feature {feature.number}
+                          </motion.span>
+                        </header>
 
-                    <motion.p
-                      initial={{ opacity: 0, y: 200 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                        <AnimatedText
+                          className="-mt-5 lg:mt-0 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
+                          text={feature.title}
+                        />
+
+                        <motion.p
+                          initial={{ opacity: 0, y: 200 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.5,
+                          }}
+                          viewport={{ once: true, amount: 'some' }}
+                          className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
+                        >
+                          {feature.description}
+                        </motion.p>
+                      </div>
+                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, x: alternate ? 300 : -300 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
-                        duration: 0.5,
+                        duration: 0.7,
                       }}
-                      viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
+                      viewport={{ once: true, amount: 'all' }}
                     >
-                      We’ve improved score keeping because you shouldn’t spend
-                      more time on your phone when out on the course.
-                    </motion.p>
+                      <Image
+                        className="w-[180px] h-[390px] lg:h-[700px] lg:w-[340px] mx-auto"
+                        src={feature.image}
+                        height={700}
+                        alt=""
+                      />
+                    </motion.div>
                   </div>
-                </div>
-                <motion.div
-                  initial={{ opacity: 0, x: 300 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.7,
-                  }}
-                  viewport={{ once: true, amount: 'all' }}
-                >
-                  <Image
-                    className="w-[180px] h-[390px] lg:h-[700px] lg:w-[340px] mx-auto"
-                    src={iphones.mobileLg1}
-                    height={700}
-                    alt=""
-                  />
-                </motion.div>
-              </div>
-              <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:justify-start gap-6 lg:gap-[328px]">
-                <div className="w-full lg:w-[484px] 2xl:w-[657px] flex flex-col items-end">
-                  <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
-                    <header>
-                      <motion.span
-                        initial={{ opacity: 0, y: -200 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.3,
-                        }}
-                        viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
-                      >
-                        Feature 2
-                      </motion.span>
-                    </header>
-                    <AnimatedText
-                      className="-mt-5 lg:-mt-0 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
-                      text="Front-row seat to your friends’ games with live streaming."
-                    />
-
-                    <motion.p
-                      initial={{ opacity: 0, y: 200 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.5,
-                      }}
-                      viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
-                    >
-                      Trash-talk beyond your foursome with live streaming right
-                      in the app.
-                    </motion.p>
-                  </div>
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, x: -300 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.7,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Image
-                    className="w-[180px] h-[390px] lg:h-[700px] lg:w-[340px]"
-                    src={iphones.mobileLg2}
-                    height={700}
-                    alt=""
-                  />
-                </motion.div>
-              </div>
-              <div className="w-full flex flex-col-reverse lg:flex-row items-center lg:justify-start gap-6 lg:gap-[328px]">
-                <div className="w-full lg:w-[484px] 2xl:w-[657px] flex flex-col items-end">
-                  <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
-                    <header>
-                      <motion.span
-                        initial={{ opacity: 0, y: -200 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.3,
-                        }}
-                        viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
-                      >
-                        Feature 3
-                      </motion.span>
-                    </header>
-                    <AnimatedText
-                      className="-mt-5 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
-                      text="Host and join contests to win against your friends."
-                    />
-
-                    <motion.p
-                      initial={{ opacity: 0, y: 200 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.5,
-                      }}
-                      viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
-                    >
-                      Play in contests with participation costs to spice things
-                      up on the course.
-                    </motion.p>
-                  </div>
-                </div>
-                <motion.div
-                  initial={{ opacity: 0, x: 300 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.7,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Image
-                    className="w-[180px] h-[390px] lg:h-[700px] lg:w-[340px]"
-                    src={iphones.mobileLg3}
-                    height={700}
-                    alt=""
-                  />
-                </motion.div>
-              </div>
-
-              <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center lg:justify-start gap-6 lg:gap-[328px]">
-                <div className="w-full lg:w-[482px] 2xl:w-[657px] flex flex-col items-end">
-                  <div className="w-[292px] lg:w-full flex flex-col gap-5 lg:gap-6">
-                    <header>
-                      <motion.span
-                        initial={{ opacity: 0, y: -200 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.3,
-                        }}
-                        viewport={{ once: true, amount: 'all' }}
-                        className={`${montserrat.className} text-xs lg:text-base 2xl:text-xl text-blue500 tracking-[0.6rem] uppercase`}
-                      >
-                        Feature 4
-                      </motion.span>
-                    </header>
-
-                    <AnimatedText
-                      className=" -mt-5 font-clash text-black mx-auto break-words flex flex-wrap justify-start gap-x-4 text-2xl lg:text-[2rem] 2xl:text-[4rem] leading-none font-medium text-left"
-                      text="Track your game with more features than you can imagine."
-                    />
-
-                    <motion.p
-                      initial={{ opacity: 0, y: 200 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.5,
-                      }}
-                      viewport={{ once: true, amount: 'some' }}
-                      className={`${montserrat.className} w-full 2xl:w-[582px] text-base lg:text-lg 2xl:text-2xl text-blue500`}
-                    >
-                      We’re talking live course updates, streamlined scorecards,
-                      chatting, contests, livestreaming, and more.
-                    </motion.p>
-                  </div>
-                </div>
-                <motion.div
-                  initial={{ opacity: 0, x: -300 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.7,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <Image
-                    className="w-[180px] h-[390px] lg:h-[700px] lg:w-[340px]"
-                    src={iphones.mobileLg4}
-                    height={700}
-                    alt=""
-                  />
-                </motion.div>
-              </div>
+                )
+              })}
             </div>
           </div>
         </motion.div>

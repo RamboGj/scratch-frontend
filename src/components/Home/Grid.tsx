@@ -66,9 +66,9 @@ export function Grid() {
             text="One App For All Needs"
           />
 
-          <div className="w-[372px] lg:w-full 2xl:w-[1326px] mt-14 lg:mt-24 flex flex-col gap-10 flex-wrap px-8">
-            <div className="flex justify-between flex-wrap items-stretch">
-              <div className="relative w-[372px] lg:w-[524px] 2xl:w-[780px]">
+          <div className="w-[372px] lg:w-full 2xl:w-[1326px] mt-14 lg:mt-24 flex flex-col gap-10 px-8">
+            <div className="flex gap-x-10 items-stretch">
+              <div className="relative w-[372px] lg:w-[780px]">
                 <Image
                   width={780}
                   height={400}
@@ -91,10 +91,10 @@ export function Grid() {
                 </h2>
               </div>
             </div>
-            <div className="flex justify-between items-stretch">
+            <div className="flex items-stretch gap-10">
               {gridItems.slice(2, 5).map((item) => {
                 return (
-                  <div key={item.text} className="relative col-span-1">
+                  <div key={item.text} className="relative">
                     <Image width={415} height={400} src={item.image} alt="" />
                     <h2 className="font-medium absolute z-20 text-white text-[2.25rem] bottom-8 left-8">
                       {item.text}
