@@ -2,10 +2,20 @@
 
 import { grids, logos } from '@/utils/images'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { AnimatedText } from '../AnimatedText'
+import { useRef, useState } from 'react'
 
 export function Grid() {
+  const gridRef = useRef<HTMLUListElement>(null)
+  const grid1 = useRef<HTMLLIElement>(null)
+  const grid2 = useRef<HTMLLIElement>(null)
+  const grid3 = useRef<HTMLLIElement>(null)
+  const grid4 = useRef<HTMLLIElement>(null)
+  const grid5 = useRef<HTMLLIElement>(null)
+
+  const gridRefs = [grid1, grid2, grid3, grid4, grid5]
+
   const headerVariant = {
     initial: {
       opacity: 0,
@@ -43,6 +53,44 @@ export function Grid() {
     },
   ]
 
+  const { scrollYProgress } = useScroll({ target: gridRef })
+
+  const gridTransform = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 300, 500, 750, 1000, 1250],
+  )
+
+  const first = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 375, 750, 1125, 1500, 1875],
+  )
+  const second = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 0, 375, 750, 1125, 1500],
+  )
+  const third = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 0, 0, 375, 750, 1125],
+  )
+
+  const fourth = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 0, 0, 0, 375, 750],
+  )
+
+  const fifth = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 0, 0, 0, 0, 375],
+  )
+
+  const positions = [first, second, third, fourth, fifth]
+
   return (
     <section className="max-w-screen w-full pb-16 lg:pb-[256px] pt-20 lg:pt-[302px] bg-[#010E09] -mt-[600px] lg:-mt-[800px]">
       <div className="max-w-[393px] lg:max-w-[1024px] 2xl:max-w-[1402px] px-3 lg:px-10 w-full mx-auto ">
@@ -66,44 +114,33 @@ export function Grid() {
             text="One App For All Needs"
           />
 
-          <div className="w-[372px] lg:w-full 2xl:w-[1326px] mt-14 lg:mt-24 flex flex-col gap-10 px-8">
-            <div className="flex gap-x-10 items-stretch">
-              <div className="relative w-[372px] lg:w-[780px]">
-                <Image
-                  width={780}
-                  height={400}
-                  src={gridItems[0].image}
-                  alt=""
-                />
-                <h2 className="font-medium absolute z-20 text-white text-[2rem] 2xl:text-[2.25rem] bottom-8 left-8 leading-none">
-                  {gridItems[0].text}
-                </h2>
-              </div>
-              <div className="relative w-[505px]">
-                <Image
-                  width={505}
-                  height={400}
-                  src={gridItems[1].image}
-                  alt=""
-                />
-                <h2 className="font-medium absolute z-20 text-white text-[2.25rem] bottom-8 left-8">
-                  {gridItems[1].text}
-                </h2>
-              </div>
-            </div>
-            <div className="flex items-stretch gap-10">
-              {gridItems.slice(2, 5).map((item) => {
-                return (
-                  <div key={item.text} className="relative">
-                    <Image width={415} height={400} src={item.image} alt="" />
-                    <h2 className="font-medium absolute z-20 text-white text-[2.25rem] bottom-8 left-8">
-                      {item.text}
-                    </h2>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
+          <motion.ul
+            style={{ y: gridTransform }}
+            ref={gridRef}
+            className="w-[372px] lg:w-full 2xl:w-[1326px] mt-14 lg:mt-24 flex flex-col items-center gap-10 px-8 h-[4000px] relative"
+          >
+            {gridItems.map((item, index) => {
+              const z = ['z-0', 'z-10', 'z-20', 'z-30', 'z-40']
+              console.log(z[index])
+
+              return (
+                <motion.li
+                  ref={gridRefs[index]}
+                  style={{
+                    y: positions[index],
+                  }}
+                  key={item.text}
+                  className={`group cursor-pointer w-[780px] h-[400px] relative rounded-[30px] overflow-hidden border-2 border-[#063A28] hover:border-white bg-[#011C12] transition-colors duration-500 ${z[index]}`}
+                >
+                  <Image width={780} height={400} src={item.image} alt="" />
+                  <h2 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
+                    {item.text}
+                  </h2>
+                  <div className="absolute z-20 inset-0 bg-gradient-to-b from-transparent to-[#063A28]  group-hover:from-transparent group-hover:to-[#063A28]/40 transition-colors"></div>
+                </motion.li>
+              )
+            })}
+          </motion.ul>
         </div>
       </div>
     </section>
