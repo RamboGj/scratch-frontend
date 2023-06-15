@@ -141,7 +141,6 @@ export function Grid() {
           >
             {gridItems.map((item, index) => {
               const z = ['z-0', 'z-10', 'z-20', 'z-30', 'z-40']
-              console.log(z[index])
 
               return (
                 <motion.li
