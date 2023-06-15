@@ -53,28 +53,6 @@ export function Features() {
     },
   ]
 
-  // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-  //   if (latest < 0.25) {
-  //     scaleY.set(0.15)
-  //   }
-
-  //   if (latest >= 0.25 && latest < 0.5) {
-  //     scaleY.set(0.35)
-  //   }
-
-  //   if (latest >= 0.5 && latest < 0.75) {
-  //     scaleY.set(0.55)
-  //   }
-
-  //   if (latest >= 0.75 && latest < 1) {
-  //     scaleY.set(0.8)
-  //   }
-
-  //   if (latest >= 1) {
-  //     scaleY.set(1)
-  //   }
-  // })
-
   return (
     <section
       ref={container}
@@ -143,7 +121,7 @@ export function Features() {
                       </div>
                     </div>
                     <motion.div
-                      initial={{ opacity: 0, x: alternate ? 300 : -300 }}
+                      initial={{ opacity: 0, x: 300 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         duration: 0.7,
