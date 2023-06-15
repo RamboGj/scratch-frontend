@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     'Golf app for players',
     'Enhance golf experience',
   ],
+  icons: '/favicon.svg',
   openGraph: {
     title:
       'Scratch: The Ultimate Golf App for Match Booking, Competition, and Rewards',
