@@ -162,12 +162,13 @@ export function Grid() {
                     width={780}
                     height={400}
                     src={item.image}
+                    className="opacity-60 group-hover:opacity-100"
                     alt=""
                   />
                   <h2 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
                     {item.text}
                   </h2>
-                  <div className="absolute z-20 inset-0 bg-gradient-to-b from-transparent to-[#063A28]  group-hover:from-transparent group-hover:to-[#126D4E] transition-colors"></div>
+                  <div className="hidden group-hover:flex absolute z-20 inset-0 bg-gradient-to-b from-transparent to-[#063A28] transition-colors"></div>
                 </motion.li>
               )
             })}
