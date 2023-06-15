@@ -2,19 +2,12 @@
 
 import { grids, logos } from '@/utils/images'
 import Image from 'next/image'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { AnimatedText } from '../AnimatedText'
 import { useRef } from 'react'
 
 export function Grid() {
   const gridRef = useRef<HTMLUListElement>(null)
-  const grid1 = useRef<HTMLLIElement>(null)
-  const grid2 = useRef<HTMLLIElement>(null)
-  const grid3 = useRef<HTMLLIElement>(null)
-  const grid4 = useRef<HTMLLIElement>(null)
-  const grid5 = useRef<HTMLLIElement>(null)
-
-  const gridRefs = [grid1, grid2, grid3, grid4, grid5]
 
   const headerVariant = {
     initial: {
@@ -58,7 +51,7 @@ export function Grid() {
   const gridTransform = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
-    [0, 300, 500, 750, 1000, 1250],
+    [0, 300, 600, 900, 1200, 1200],
   )
 
   const first = useTransform(
@@ -89,7 +82,34 @@ export function Grid() {
     [0, 0, 0, 0, 0, 375],
   )
 
-  const positions = [first, second, third, fourth, fifth]
+  const firstSpring = useSpring(first, {
+    stiffness: 750,
+    damping: 200,
+  })
+  const secondSpring = useSpring(second, {
+    stiffness: 750,
+    damping: 200,
+  })
+  const thirdSpring = useSpring(third, {
+    stiffness: 750,
+    damping: 200,
+  })
+  const fourthSpring = useSpring(fourth, {
+    stiffness: 750,
+    damping: 200,
+  })
+  const fifthSpring = useSpring(fifth, {
+    stiffness: 750,
+    damping: 200,
+  })
+
+  const positions = [
+    firstSpring,
+    secondSpring,
+    thirdSpring,
+    fourthSpring,
+    fifthSpring,
+  ]
 
   return (
     <section className="max-w-screen w-full pb-16 lg:pb-[256px] pt-20 lg:pt-[302px] bg-[#010E09] -mt-[600px] lg:-mt-[800px]">
@@ -125,7 +145,6 @@ export function Grid() {
 
               return (
                 <motion.li
-                  ref={gridRefs[index]}
                   style={{
                     y: positions[index],
                   }}
@@ -136,7 +155,7 @@ export function Grid() {
                   <h2 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
                     {item.text}
                   </h2>
-                  <div className="absolute z-20 inset-0 bg-gradient-to-b from-transparent to-[#063A28]  group-hover:from-transparent group-hover:to-[#063A28]/40 transition-colors"></div>
+                  <div className="absolute z-20 inset-0 bg-gradient-to-b from-transparent to-[#063A28]  group-hover:from-transparent group-hover:to-[#126D4E] transition-colors"></div>
                 </motion.li>
               )
             })}
