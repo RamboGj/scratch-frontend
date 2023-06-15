@@ -13,9 +13,9 @@ export function Footer() {
   return (
     <footer className="max-w-screen w-full bg-[#010E09] py-14 lg:py-[115px] px-8 lg:pl-[120px]">
       <div className="w-[300px] lg:w-[340px] flex flex-col items-start">
-        <h2 className="text-[2.25rem] lg:text-[3.125rem] text-white leading-none font-medium">
+        <h1 className="text-[2.25rem] lg:text-[3.125rem] text-white leading-none font-medium">
           Golf itch? <span className="text-blue500">Scratch</span> it.
-        </h2>
+        </h1>
         <div className="mt-12 flex items-stretch gap-5">
           <Link href={'#'} target="_blank">
             <Image src={socials.appleStore} alt="Apple Store" />

@@ -34,6 +34,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: '/og.png',
   },
+  twitter: {
+    site: 'https://scratch-frontend.vercel.app/',
+    images: '/og.png',
+    card: 'summary',
+    title:
+      'Scratch: The Ultimate Golf App for Match Booking, Competition, and Rewards',
+  },
 }
 
 export default function RootLayout({

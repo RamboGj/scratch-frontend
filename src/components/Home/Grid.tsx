@@ -27,22 +27,28 @@ export function Grid() {
     {
       text: 'Streamlined Score Tracking',
       image: grids.grid1,
+      alt: 'Iphone displaying image from Scratch app',
     },
     {
       text: 'Live-Stream Matches',
       image: grids.grid2,
+      alt: 'Iphone displaying image from Scratch app',
     },
+
     {
       text: 'Set Entry Fees',
       image: grids.grid3,
+      alt: 'Iphone displaying image from Scratch app',
     },
     {
       text: 'Play Against Friends',
       image: grids.grid4,
+      alt: 'Iphone displaying image from Scratch app',
     },
     {
       text: 'Win Contests',
       image: grids.grid5,
+      alt: 'Iphone displaying image from Scratch app',
     },
   ]
 
@@ -151,9 +157,9 @@ export function Grid() {
                   className={`group cursor-pointer w-[323px] lg:w-[780px] h-[400px] relative rounded-[30px] overflow-hidden border-2 border-[#063A28] hover:border-white bg-[#011C12] transition-colors duration-500 ${z[index]}`}
                 >
                   <Image width={780} height={400} src={item.image} alt="" />
-                  <h2 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
+                  <h1 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
                     {item.text}
-                  </h2>
+                  </h1>
                   <div className="absolute z-20 inset-0 bg-gradient-to-b from-transparent to-[#063A28]  group-hover:from-transparent group-hover:to-[#126D4E] transition-colors"></div>
                 </motion.li>
               )

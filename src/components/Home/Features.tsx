@@ -29,6 +29,7 @@ export function Features() {
       description:
         'We’ve improved score keeping because you shouldn’t spend more time on your phone when out on the course.',
       image: iphones.mobileLg1,
+      alt: 'Selecting game type and options.',
     },
     {
       number: 2,
@@ -36,6 +37,7 @@ export function Features() {
       description:
         'Trash-talk beyond your foursome with live streaming right in the app.',
       image: iphones.mobileLg2,
+      alt: 'User doing a livestream on Scratch app.',
     },
     {
       number: 3,
@@ -43,6 +45,7 @@ export function Features() {
       description:
         'Play in contests with participation costs to spice things up on the course.',
       image: iphones.mobileLg3,
+      alt: "Game's players confirmation stage before start match.",
     },
     {
       number: 4,
@@ -50,6 +53,7 @@ export function Features() {
       description:
         'We’re talking live course updates, streamlined scorecards, chatting, contests, livestreaming, and more.',
       image: iphones.mobileLg4,
+      alt: 'Players score and match details during the game.',
     },
   ]
 
@@ -132,7 +136,7 @@ export function Features() {
                         className="w-[180px] h-[390px] lg:h-[700px] lg:w-[340px] mx-auto"
                         src={feature.image}
                         height={700}
-                        alt=""
+                        alt={feature.alt}
                         priority
                       />
                     </motion.div>
