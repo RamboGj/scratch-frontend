@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title:
       'Scratch: The Ultimate Golf App for Match Booking, Competition, and Rewards',
     description:
-      'Join the golfing revolution with Scratch, the golf app that works similar to Instagram. Connect with fellow players, schedule matches, compete with friends, win prizes, and unlock exclusive rewards. Enhance your golfing experience today!',
+      'Join the golfing revolution with Scratch. Connect with fellow players, schedule matches, compete with friends, win prizes, and unlock exclusive rewards. Enhance your golfing experience today!',
     url: 'https://scratch-frontend.vercel.app/',
     type: 'website',
     siteName: 'Scratch Golf App',
