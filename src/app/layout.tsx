@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Scratch Golf App',
     locale: 'en_US',
+    images: '/og.png',
   },
 }
 
