@@ -130,7 +130,7 @@ export function Features() {
                       transition={{
                         duration: 0.7,
                       }}
-                      viewport={{ once: true, amount: 'all' }}
+                      viewport={{ once: true, amount: 'some' }}
                     >
                       <Image
                         className="w-[180px] h-[390px] lg:h-[700px] lg:w-[340px] mx-auto"
