@@ -132,6 +132,7 @@ export function Grid() {
               src={logos.logoSm}
               alt="Scratch Logo"
               className="w-5 h-7 lg:w-[45px] lg:h-[62px]"
+              loading="lazy"
             />
           </motion.div>
 
@@ -156,7 +157,13 @@ export function Grid() {
                   key={item.text}
                   className={`group cursor-pointer w-[323px] lg:w-[780px] h-[400px] relative rounded-[30px] overflow-hidden border-2 border-[#063A28] hover:border-white bg-[#011C12] transition-colors duration-500 ${z[index]}`}
                 >
-                  <Image width={780} height={400} src={item.image} alt="" />
+                  <Image
+                    loading="lazy"
+                    width={780}
+                    height={400}
+                    src={item.image}
+                    alt=""
+                  />
                   <h1 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
                     {item.text}
                   </h1>

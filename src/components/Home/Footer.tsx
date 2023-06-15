@@ -18,10 +18,10 @@ export function Footer() {
         </h1>
         <div className="mt-12 flex items-stretch gap-5">
           <Link href={'#'} target="_blank">
-            <Image src={socials.appleStore} alt="Apple Store" />
+            <Image loading="lazy" src={socials.appleStore} alt="Apple Store" />
           </Link>
           <Link href={'#'} target="_blank">
-            <Image src={socials.googlePlay} alt="Google Play" />
+            <Image loading="lazy" src={socials.googlePlay} alt="Google Play" />
           </Link>
         </div>
         <div className="mt-12">
@@ -33,7 +33,11 @@ export function Footer() {
                   className="bg-[#1A2622] rounded-full p-2"
                 >
                   <Link href={social.href} target="_blank">
-                    <Image src={social.image} alt="Instagram Logo" />
+                    <Image
+                      loading="lazy"
+                      src={social.image}
+                      alt="Instagram Logo"
+                    />
                   </Link>
                 </li>
               )
