@@ -164,9 +164,9 @@ export function Grid() {
                     src={item.image}
                     alt=""
                   />
-                  <h1 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
+                  <h2 className="font-medium absolute z-30 text-white text-[2.25rem] bottom-8 left-8">
                     {item.text}
-                  </h1>
+                  </h2>
                   <div className="absolute z-20 inset-0 bg-gradient-to-b from-transparent to-[#063A28]  group-hover:from-transparent group-hover:to-[#126D4E] transition-colors"></div>
                 </motion.li>
               )
