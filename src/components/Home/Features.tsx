@@ -133,6 +133,7 @@ export function Features() {
                         src={feature.image}
                         height={700}
                         alt=""
+                        priority
                       />
                     </motion.div>
                   </div>
